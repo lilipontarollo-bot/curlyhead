@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurlyGlow | Cabelos com Curvas & Definição</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            // Vermelho rosado (Pinkish Red) - Solid, rich single shade
+                            pinkRed: '#C9184A',
+                            pinkRedDark: '#A01138',
+                            pinkRedLight: '#E25B81',
+                            pinkRedSoft: '#F8E6EB',
+                            bgSoft: '#FAF0F2',
+                            cardBg: '#FFFFFF',
+                            dark: '#2B151A',
+                            subtleText: '#7A6268',
+                            borderColor: '#EECDCF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF0F2;
+            color: #2B151A;
+        }
+        .clean-card {
+            background-color: #FFFFFF;
+            border: 1px solid #EECDCF;
+            box-shadow: 0 4px 20px -2px rgba(201, 24, 74, 0.05);
+        }
+        .clean-card-hover {
+            transition: all 0.25s ease-in-out;
+        }
+        .clean-card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px -4px rgba(201, 24, 74, 0.12);
+            border-color: #C9184A;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF0F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C9184A;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-brand-pinkRed selection:text-white relative overflow-x-hidden">
+
+    <div class="bg-brand-pinkRed text-white text-xs md:text-sm font-semibold py-2.5 px-4 text-center relative z-20 shadow-sm flex items-center justify-center gap-2">
+        <span>FRETE GRÁTIS em compras acima de R$ 120,00 | Cupom: <span class="bg-white/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider">CURLY10</span></span>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-brand-bgSoft/95 backdrop-blur-md border-b border-brand-borderColor transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- Logo Clean -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-brand-pinkRed flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <span class="text-white font-serif font-bold text-xl">C</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-brand-dark flex items-center">
+                        Curly<span class="text-brand-pinkRed font-sans font-extrabold">Glow</span>
+                    </span>
+                    <span class="text-[9px] tracking-widest uppercase font-bold text-brand-subtleText -mt-1">Cuidados & Definição</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-brand-dark">
+                <a href="#produtos" class="hover:text-brand-pinkRed transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-pinkRed hover:after:w-full after:transition-all">Produtos</a>
+                <a href="#curvaturas" class="hover:text-brand-pinkRed transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-pinkRed hover:after:w-full after:transition-all">Guia de Curvas</a>
+                <a href="#quiz" class="hover:text-brand-pinkRed transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-pinkRed hover:after:w-full after:transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-pinkRed text-xs"></i> Quiz de Rotina
+                </a>
+                <a href="#tendencias" class="hover:text-brand-pinkRed transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-pinkRed hover:after:w-full after:transition-all">Dicas & Tendências</a>
+                <a href="#duvidas" class="hover:text-brand-pinkRed transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-pinkRed hover:after:w-full after:transition-all">Dúvidas</a>
+            </nav>
+
+            <!-- Ações: Pesquisa, Login, Carrinho -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <div class="relative hidden sm:block w-48 lg:w-60">
+                    <input type="text" id="searchInput" oninput="filterProducts()" placeholder="Buscar ativador, gelatina..." class="w-full pl-9 pr-4 py-2 text-xs rounded-full bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-pinkRed border border-brand-borderColor transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-brand-subtleText text-xs"></i>
+                </div>
+
+                <button onclick="toggleModal('loginModal')" class="p-2 text-brand-dark hover:text-brand-pinkRed hover:bg-brand-pinkRedSoft rounded-full transition-all" title="Minha Conta">
+                    <i class="fa-regular fa-user text-lg"></i>
+                </button>
+
+                <button onclick="toggleCart()" class="relative p-2.5 bg-brand-pinkRed text-white rounded-full hover:bg-brand-pinkRedDark shadow-md hover:shadow-lg transition-all">
+                    <i class="fa-solid fa-bag-shopping text-base"></i>
+                    <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-brand-dark text-white text-[11px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow">0</span>
+                </button>
+
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-brand-dark hover:text-brand-pinkRed">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-bgSoft border-b border-brand-borderColor px-6 py-4 space-y-3">
+            <input type="text" id="searchInputMobile" oninput="filterProducts()" placeholder="Buscar ativador, shampoo..." class="w-full pl-9 pr-4 py-2 text-xs rounded-full bg-white border border-brand-borderColor">
+            <a href="#produtos" onclick="toggleMobileMenu()" class="block text-brand-dark hover:text-brand-pinkRed font-medium">Produtos</a>
+            <a href="#curvaturas" onclick="toggleMobileMenu()" class="block text-brand-dark hover:text-brand-pinkRed font-medium">Guia de Curvas</a>
+            <a href="#quiz" onclick="toggleMobileMenu()" class="block text-brand-pinkRed font-semibold flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Quiz de Rotina
+            </a>
+            <a href="#tendencias" onclick="toggleMobileMenu()" class="block text-brand-dark hover:text-brand-pinkRed font-medium">Dicas & Tendências</a>
+            <a href="#duvidas" onclick="toggleMobileMenu()" class="block text-brand-dark hover:text-brand-pinkRed font-medium">Dúvidas</a>
+        </div>
+    </header>
+
+    <section class="relative pt-10 pb-16 lg:py-20 overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-pinkRedSoft border border-brand-borderColor text-brand-pinkRed text-xs font-bold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-pinkRed"></span>
+                        <span>Fórmulas de Alta Definição & Ativos Liberados</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-brand-dark">
+                        Sua curvatura natural, <br>
+                        <span class="font-serif italic font-normal text-brand-pinkRed">com definição e vida.</span>
+                    </h1>
+
+                    <p class="text-brand-subtleText text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Nutrição profunda, leveza e alta retenção para fios ondulados, cacheados e crespos (2A a 4C). Resultados visíveis desde a primeira aplicação.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#produtos" class="w-full sm:w-auto px-8 py-3.5 bg-brand-pinkRed text-white font-bold rounded-full shadow-md hover:bg-brand-pinkRedDark transition-all text-center">
+                            Conhecer Coleção <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#quiz" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-brand-borderColor text-brand-dark font-bold rounded-full hover:border-brand-pinkRed transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-pinkRed"></i>
+                            Quiz de Rotina Capilar
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-brand-borderColor max-w-md mx-auto lg:mx-0 text-center">
+                        <div>
+                            <span class="block text-2xl font-extrabold text-brand-pinkRed">100%</span>
+                            <span class="text-xs text-brand-subtleText font-medium">Vegano & Cruelty-Free</span>
+                        </div>
+                        <div class="border-x border-brand-borderColor">
+                            <span class="block text-2xl font-extrabold text-brand-pinkRed">+72h</span>
+                            <span class="text-xs text-brand-subtleText font-medium">Definição Day After</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-extrabold text-brand-pinkRed">Zero</span>
+                            <span class="text-xs text-brand-subtleText font-medium">Sulfatos & Petrolatos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl bg-white p-3 shadow-xl border border-brand-borderColor">
+                        <div class="w-full h-full rounded-2xl overflow-hidden relative flex flex-col justify-between">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80" alt="Cabelo Crespo e Cacheado Definido" class="w-full h-64 object-cover rounded-xl">
+                            
+                            <div class="p-3 bg-white flex items-center justify-between border-t border-pink-100">
+                                <div class="text-left">
+                                    <h4 class="font-bold text-brand-dark text-sm">Kit Ativação & Definição</h4>
+                                    <p class="text-xs text-brand-pinkRed font-semibold">Cacheadas & Crespas</p>
+                                </div>
+                                <span class="bg-brand-pinkRed text-white font-extrabold text-xs px-3 py-1.5 rounded-full">R$ 89,90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="curvaturas" class="py-12 bg-white border-y border-brand-borderColor relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-pinkRed">Encontre seu tipo de fio</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mt-1">Qual é a sua curvatura?</h2>
+                <p class="text-xs sm:text-sm text-brand-subtleText mt-1.5">Fórmulas sob medida para dar leveza, definição e maciez exatas para o seu cabelo.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-2.5" id="curlTypeFilters">
+                <button onclick="filterByCurl('all')" class="curl-btn active bg-brand-pinkRed text-white px-5 py-2 rounded-full text-xs font-bold transition-all shadow-sm">
+                    Todas as Curvas
+                </button>
+                <button onclick="filterByCurl('2ABC')" class="curl-btn bg-brand-pinkRedSoft text-brand-dark hover:bg-brand-pinkRed hover:text-white px-5 py-2 rounded-full text-xs font-bold transition-all">
+                    Ondulados (2A, 2B, 2C)
+                </button>
+                <button onclick="filterByCurl('3ABC')" class="curl-btn bg-brand-pinkRedSoft text-brand-dark hover:bg-brand-pinkRed hover:text-white px-5 py-2 rounded-full text-xs font-bold transition-all">
+                    Cacheados (3A, 3B, 3C)
+                </button>
+                <button onclick="filterByCurl('4ABC')" class="curl-btn bg-brand-pinkRedSoft text-brand-dark hover:bg-brand-pinkRed hover:text-white px-5 py-2 rounded-full text-xs font-bold transition-all">
+                    Crespos (4A, 4B, 4C)
+                </button>
+                <button onclick="filterByCurl('transicao')" class="curl-btn bg-brand-pinkRedSoft text-brand-dark hover:bg-brand-pinkRed hover:text-white px-5 py-2 rounded-full text-xs font-bold transition-all">
+                    Em Transição
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-pinkRed"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-pinkRed">Linha CurlyGlow</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-brand-dark mt-1">Produtos em Destaque</h2>
+                </div>
+
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 text-xs">
+                    <button onclick="filterByCategory('all')" class="cat-btn bg-brand-dark text-white font-bold px-4 py-2 rounded-lg shrink-0 transition-all">Todos</button>
+                    <button onclick="filterByCategory('ativador')" class="cat-btn bg-white text-brand-subtleText hover:bg-brand-pinkRedSoft font-semibold px-4 py-2 rounded-lg shrink-0 transition-all border border-brand-borderColor">Ativadores & Cremes</button>
+                    <button onclick="filterByCategory('gelatina')" class="cat-btn bg-white text-brand-subtleText hover:bg-brand-pinkRedSoft font-semibold px-4 py-2 rounded-lg shrink-0 transition-all border border-brand-borderColor">Gelatinas & Geis</button>
+                    <button onclick="filterByCategory('tratamento')" class="cat-btn bg-white text-brand-subtleText hover:bg-brand-pinkRedSoft font-semibold px-4 py-2 rounded-lg shrink-0 transition-all border border-brand-borderColor">Máscaras & Nutrição</button>
+                    <button onclick="filterByCategory('oleos')" class="cat-btn bg-white text-brand-subtleText hover:bg-brand-pinkRedSoft font-semibold px-4 py-2 rounded-lg shrink-0 transition-all border border-brand-borderColor">Óleos & Séruns</button>
+                </div>
+            </div>
+
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+
+            <div id="noProductsMessage" class="hidden text-center py-12">
+                <i class="fa-solid fa-box-open text-4xl text-brand-pinkRed mb-3"></i>
+                <h3 class="text-lg font-bold text-brand-dark">Nenhum produto encontrado</h3>
+                <p class="text-xs text-brand-subtleText mt-1">Tente buscar por outro termo ou limpe os filtros selecionados.</p>
+                <button onclick="resetFilters()" class="mt-4 px-5 py-2 bg-brand-pinkRed text-white text-xs font-bold rounded-full">Resetar Filtros</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="quiz" class="py-16 bg-white border-y border-brand-borderColor relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="clean-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+                
+                <div class="text-center max-w-xl mx-auto mb-8">
+                    <span class="inline-block bg-brand-pinkRed text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">Quiz Inteligente</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark">Monte sua Rotina de Curvas</h2>
+                    <p class="text-xs sm:text-sm text-brand-subtleText mt-2">Responda 3 perguntas rápidas e descubra a combinação exata para o seu cabelo.</p>
+                </div>
+
+                <div id="quizContainer" class="bg-brand-bgSoft p-6 sm:p-8 rounded-2xl border border-brand-borderColor">
+                    <!-- Step 1 -->
+                    <div id="quizStep1" class="space-y-4">
+                        <span class="text-xs font-bold text-brand-pinkRed">Passo 1 de 3</span>
+                        <h3 class="text-base font-bold text-brand-dark">Qual a estrutura principal do seu fio?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <button onclick="selectQuizStep(1, '2ABC')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Ondulados (2A-2C)</span>
+                                <span class="text-xs text-brand-subtleText">Ondas leves, necessita de definição sem peso.</span>
+                            </button>
+                            <button onclick="selectQuizStep(1, '3ABC')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Cacheados (3A-3C)</span>
+                                <span class="text-xs text-brand-subtleText">Cachos em espiral, busca alta definição.</span>
+                            </button>
+                            <button onclick="selectQuizStep(1, '4ABC')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Crespos (4A-4C)</span>
+                                <span class="text-xs text-brand-subtleText">Curvatura bem fechada, necessita de nutrição.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="quizStep2" class="hidden space-y-4">
+                        <span class="text-xs font-bold text-brand-pinkRed">Passo 2 de 3</span>
+                        <h3 class="text-base font-bold text-brand-dark">Qual o seu objetivo de finalização?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                            <button onclick="selectQuizStep(2, 'definicao')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Máxima Definição</span>
+                                <span class="text-xs text-brand-subtleText">Day after duradouro e fios alinhados.</span>
+                            </button>
+                            <button onclick="selectQuizStep(2, 'volume')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Volume & Leveza</span>
+                                <span class="text-xs text-brand-subtleText">Cabelo encorpado, solto e volumoso.</span>
+                            </button>
+                            <button onclick="selectQuizStep(2, 'nutricao')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Nutrição & Brilho</span>
+                                <span class="text-xs text-brand-subtleText">Combate ao ressecamento e à opacidade.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div id="quizStep3" class="hidden space-y-4">
+                        <span class="text-xs font-bold text-brand-pinkRed">Passo 3 de 3</span>
+                        <h3 class="text-base font-bold text-brand-dark">Seu cabelo possui coloração ou química?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <button onclick="finishQuiz('sim')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Sim, possui química ou tintura</span>
+                                <span class="text-xs text-brand-subtleText">Foco em reconstrução e hidratação.</span>
+                            </button>
+                            <button onclick="finishQuiz('nao')" class="quiz-option p-4 rounded-xl bg-white border border-brand-borderColor hover:border-brand-pinkRed text-left transition-all">
+                                <span class="block font-bold text-brand-dark text-sm">Não, fios 100% naturais</span>
+                                <span class="text-xs text-brand-subtleText">Foco em manutenção e proteção.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="quizResult" class="hidden text-center py-4 space-y-4">
+                        <div class="w-12 h-12 bg-brand-pinkRed text-white rounded-full flex items-center justify-center mx-auto text-xl">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-brand-dark">Recomendação Personalizada CurlyGlow</h3>
+                        <p id="quizRecommendationText" class="text-xs sm:text-sm text-brand-subtleText max-w-md mx-auto leading-relaxed"></p>
+                        <div class="pt-2">
+                            <button onclick="addRecommendedComboToCart()" class="px-8 py-3 bg-brand-pinkRed hover:bg-brand-pinkRedDark text-white font-bold text-xs rounded-full shadow transition-all">
+                                Adicionar Kit Recomendado ao Carrinho
+                            </button>
+                        </div>
+                        <button onclick="restartQuiz()" class="text-xs text-brand-subtleText hover:text-brand-pinkRed underline block mx-auto pt-2">Refazer Quiz</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tendencias" class="py-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-pinkRed">Dicas & Técnicas</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark mt-1">Tendências de Finalização</h2>
+                <p class="text-xs sm:text-sm text-brand-subtleText mt-2">Guia prático para extrair a melhor definição e brilho dos seus cabelos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="clean-card clean-card-hover rounded-2xl overflow-hidden group">
+                    <div class="relative overflow-hidden h-48 bg-brand-pinkRedSoft">
+                        <img src="https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&w=600&q=80" alt="Fitagem Estruturada em Cabelo Cacheado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-pinkRed text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Técnica Fitagem</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-brand-dark text-base mb-2 group-hover:text-brand-pinkRed transition-colors">Fitagem para Definição de Longa Duração</h3>
+                        <p class="text-xs text-brand-subtleText leading-relaxed mb-4">Separe o cabelo em fitas finas e aplique o ativador uniformemente para garantir até 4 dias de day after.</p>
+                        <a href="#produtos" class="text-xs font-bold text-brand-pinkRed hover:underline inline-flex items-center gap-1">Ver Produtos <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                    </div>
+                </article>
+
+                <article class="clean-card clean-card-hover rounded-2xl overflow-hidden group">
+                    <div class="relative overflow-hidden h-48 bg-brand-pinkRedSoft">
+                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80" alt="Umectação em Cabelo Crespo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-dark text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Nutrição</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-brand-dark text-base mb-2 group-hover:text-brand-pinkRed transition-colors">Umectação Noturna com Blend Vegetal</h3>
+                        <p class="text-xs text-brand-subtleText leading-relaxed mb-4">Aplique o sérum nutritivo do comprimento às pontas antes de dormir para selar cutículas e repor os lipídios.</p>
+                        <a href="#produtos" class="text-xs font-bold text-brand-pinkRed hover:underline inline-flex items-center gap-1">Ver Produtos <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                    </div>
+                </article>
+
+                <article class="clean-card clean-card-hover rounded-2xl overflow-hidden group">
+                    <div class="relative overflow-hidden h-48 bg-brand-pinkRedSoft">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Secagem de Cachos sem Frizz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-pinkRed text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full">Secagem</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-brand-dark text-base mb-2 group-hover:text-brand-pinkRed transition-colors">Secagem sem Frizz com Tecido de Algodão</h3>
+                        <p class="text-xs text-brand-subtleText leading-relaxed mb-4">Utilize o método plopping por 20 minutos para retirar o excesso de água mantendo a curvatura natural intacta.</p>
+                        <a href="#produtos" class="text-xs font-bold text-brand-pinkRed hover:underline inline-flex items-center gap-1">Ver Produtos <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-t border-brand-borderColor relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-pinkRed">Depoimentos</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mt-1">Quem usa aprova</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="clean-card p-6 rounded-2xl space-y-3">
+                    <div class="flex text-brand-pinkRed text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-brand-subtleText italic">"O ativador definiu meus cachos 3C perfeitamente sem deixar o cabelo pesado ou rígido. Recomendo de olhos fechados!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-pinkRed text-white font-bold text-xs flex items-center justify-center">CB</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-dark">Camila B.</h4>
+                            <span class="text-[10px] text-brand-pinkRed font-semibold">Curvatura 3C</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clean-card p-6 rounded-2xl space-y-3">
+                    <div class="flex text-brand-pinkRed text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-brand-subtleText italic">"Incrível para o meu 4A! A gelatina dá um alinhamento surreal e o day after é super fácil de arrumar pela manhã."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-dark text-white font-bold text-xs flex items-center justify-center">JR</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-dark">Jéssica R.</h4>
+                            <span class="text-[10px] text-brand-pinkRed font-semibold">Curvatura 4A/4B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clean-card p-6 rounded-2xl space-y-3">
+                    <div class="flex text-brand-pinkRed text-xs space-x-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-brand-subtleText italic">"Meu cabelo é 2B e pesava com qualquer creme de pentear. O kit leveza da CurlyGlow acertou em cheio."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-pinkRed text-white font-bold text-xs flex items-center justify-center">MA</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-dark">Mariana A.</h4>
+                            <span class="text-[10px] text-brand-pinkRed font-semibold">Curvatura 2B</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="duvidas" class="py-16 border-t border-brand-borderColor relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-pinkRed">Dúvidas Frequentes</span>
+                <h2 class="text-3xl font-extrabold text-brand-dark mt-1">Perguntas Comuns</h2>
+            </div>
+
+            <div class="space-y-3 max-w-3xl mx-auto">
+                <div class="clean-card rounded-xl overflow-hidden">
+                    <button onclick="toggleAccordion(1)" class="w-full p-4 text-left bg-white font-bold text-sm text-brand-dark flex items-center justify-between hover:bg-brand-pinkRedSoft transition-colors">
+                        <span>Os produtos são adequados para No Poo e Low Poo?</span>
+                        <i id="accIcon1" class="fa-solid fa-chevron-down text-xs text-brand-pinkRed transition-transform"></i>
+                    </button>
+                    <div id="accBody1" class="hidden p-4 text-xs text-brand-subtleText leading-relaxed border-t border-brand-borderColor bg-white">
+                        Sim! Toda a linha CurlyGlow é 100% livre de sulfatos agressivos, parabenos, petrolatos e silicones insolúveis.
+                    </div>
+                </div>
+
+                <div class="clean-card rounded-xl overflow-hidden">
+                    <button onclick="toggleAccordion(2)" class="w-full p-4 text-left bg-white font-bold text-sm text-brand-dark flex items-center justify-between hover:bg-brand-pinkRedSoft transition-colors">
+                        <span>Os produtos causam acúmulo (build-up) nos fios?</span>
+                        <i id="accIcon2" class="fa-solid fa-chevron-down text-xs text-brand-pinkRed transition-transform"></i>
+                    </button>
+                    <div id="accBody2" class="hidden p-4 text-xs text-brand-subtleText leading-relaxed border-t border-brand-borderColor bg-white">
+                        Não. Desenvolvemos formulações solúveis em água com óleos vegetais de alta absorção que alimentam a fibra sem criar camadas pesadas.
+                    </div>
+                </div>
+
+                <div class="clean-card rounded-xl overflow-hidden">
+                    <button onclick="toggleAccordion(3)" class="w-full p-4 text-left bg-white font-bold text-sm text-brand-dark flex items-center justify-between hover:bg-brand-pinkRedSoft transition-colors">
+                        <span>Qual o prazo de entrega das compras online?</span>
+                        <i id="accIcon3" class="fa-solid fa-chevron-down text-xs text-brand-pinkRed transition-transform"></i>
+                    </button>
+                    <div id="accBody3" class="hidden p-4 text-xs text-brand-subtleText leading-relaxed border-t border-brand-borderColor bg-white">
+                        Entregamos em todo o Brasil. O prazo médio varia de 2 a 6 dias úteis. Compras acima de R$ 120 contam com Frete Grátis!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+        <div onclick="toggleCart()" id="cartOverlay" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+        <div id="cartContent" class="absolute top-0 right-0 w-full sm:w-96 h-full bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto">
+            
+            <div class="p-5 border-b border-brand-borderColor flex items-center justify-between bg-brand-bgSoft">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-brand-pinkRed text-lg"></i>
+                    <h3 class="font-bold text-brand-dark text-base">Meu Carrinho</h3>
+                </div>
+                <button onclick="toggleCart()" class="p-2 text-brand-subtleText hover:text-brand-dark">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="bg-brand-pinkRedSoft px-5 py-3 border-b border-brand-borderColor">
+                <div class="flex justify-between text-xs font-semibold text-brand-pinkRed mb-1">
+                    <span id="shippingText">Faltam R$ 120,00 para Frete Grátis</span>
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div class="w-full bg-pink-200 h-1.5 rounded-full overflow-hidden">
+                    <div id="shippingBarProgress" class="bg-brand-pinkRed h-full w-0 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+
+            <div class="p-5 border-t border-brand-borderColor bg-brand-bgSoft space-y-3">
+                <div class="flex justify-between text-xs text-brand-subtleText">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal" class="font-bold text-brand-dark">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between text-xs text-brand-subtleText">
+                    <span>Frete:</span>
+                    <span id="cartShippingCost" class="font-bold text-brand-pinkRed">Calculando...</span>
+                </div>
+                <div class="flex justify-between text-base font-extrabold text-brand-dark border-t border-brand-borderColor pt-2">
+                    <span>Total:</span>
+                    <span id="cartTotal" class="text-brand-pinkRed">R$ 0,00</span>
+                </div>
+
+                <button onclick="checkoutSimulated()" class="w-full py-3.5 bg-brand-pinkRed hover:bg-brand-pinkRedDark text-white font-bold rounded-xl shadow transition-all text-xs tracking-wider uppercase">
+                    Finalizar Compra <i class="fa-solid fa-lock ml-1"></i>
+                </button>
+
+                <p class="text-[10px] text-center text-brand-subtleText flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-shield-halved text-brand-pinkRed"></i> Compra 100% Segura & Envio Rápido
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm hidden">
+        <div class="bg-white w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden border border-brand-borderColor">
+            <button onclick="toggleModal('loginModal')" class="absolute top-4 right-4 text-brand-subtleText hover:text-brand-dark">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-brand-pinkRedSoft text-brand-pinkRed rounded-full flex items-center justify-center mx-auto mb-2 text-xl">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <h3 class="text-xl font-bold text-brand-dark">Acessar Conta</h3>
+                <p class="text-xs text-brand-subtleText mt-1">Acompanhe seus pedidos e ganhe pontos</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-brand-dark mb-1">E-mail</label>
+                    <input type="email" required placeholder="seuemail@exemplo.com" class="w-full px-4 py-2.5 rounded-xl border border-brand-borderColor text-xs focus:ring-2 focus:ring-brand-pinkRed focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-brand-dark mb-1">Senha</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-brand-borderColor text-xs focus:ring-2 focus:ring-brand-pinkRed focus:outline-none">
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                    <label class="flex items-center gap-2 text-brand-subtleText">
+                        <input type="checkbox" class="rounded text-brand-pinkRed focus:ring-brand-pinkRed"> Lembrar-me
+                    </label>
+                    <a href="#" class="text-brand-pinkRed font-semibold hover:underline">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-brand-pinkRed hover:bg-brand-pinkRedDark text-white font-bold text-xs rounded-xl shadow transition-all uppercase">
+                    Entrar
+                </button>
+            </form>
+
+            <div class="mt-6 text-center text-xs text-brand-subtleText border-t border-brand-borderColor pt-4">
+                Ainda não tem conta? <a href="#" onclick="showToast('Modo de cadastro simulado!')" class="text-brand-pinkRed font-bold hover:underline">Criar conta</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-brand-dark text-white text-xs font-semibold px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 pointer-events-none opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-brand-pinkRed"></i>
+        <span id="toastMessage">Item adicionado com sucesso!</span>
+    </div>
+
+    <footer class="bg-brand-dark text-white pt-16 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-pinkRed flex items-center justify-center">
+                            <span class="font-serif font-bold text-white">C</span>
+                        </div>
+                        <span class="font-serif text-xl font-bold text-white">Curly<span class="text-brand-pinkRed">Glow</span></span>
+                    </div>
+                    <p class="text-xs text-white/70 leading-relaxed">
+                        Cosméticos especializados em valorizar a beleza autêntica de ondas, cachos e crespos com hidratação, definição e nutrição prolongada.
+                    </p>
+                    <div class="flex space-x-3 text-white/80 text-base">
+                        <a href="#" class="hover:text-brand-pinkRed transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-pinkRed transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="hover:text-brand-pinkRed transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="hover:text-brand-pinkRed transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-xs text-white/70">
+                        <li><a href="#produtos" class="hover:text-brand-pinkRed transition-colors">Linha de Produtos</a></li>
+                        <li><a href="#curvaturas" class="hover:text-brand-pinkRed transition-colors">Guia de Curvaturas (2A-4C)</a></li>
+                        <li><a href="#quiz" class="hover:text-brand-pinkRed transition-colors">Quiz de Rotina Capilar</a></li>
+                        <li><a href="#tendencias" class="hover:text-brand-pinkRed transition-colors">Técnicas de Finalização</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-4">Atendimento</h4>
+                    <ul class="space-y-2 text-xs text-white/70">
+                        <li><i class="fa-solid fa-envelope mr-2 text-brand-pinkRed"></i> contato@curlyglow.com.br</li>
+                        <li><i class="fa-brands fa-whatsapp mr-2 text-brand-pinkRed"></i> (11) 98888-7777</li>
+                        <li><i class="fa-solid fa-clock mr-2 text-brand-pinkRed"></i> Seg a Sex: 09h às 18h</li>
+                        <li><a href="#duvidas" class="hover:text-brand-pinkRed transition-colors">Dúvidas Frequentes</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-sm text-white">Receba Ofertas</h4>
+                    <p class="text-xs text-white/70">Cadastre-se para receber 10% OFF na primeira compra.</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Seu e-mail" class="w-full px-3 py-2 text-xs bg-white/10 text-white placeholder-white/50 rounded-lg border border-white/20 focus:outline-none focus:border-brand-pinkRed">
+                        <button type="submit" class="w-full py-2.5 bg-brand-pinkRed hover:bg-brand-pinkRedDark text-white text-xs font-bold rounded-lg transition-all uppercase tracking-wider">
+                            Quero Cupom
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+                <p>&copy; 2026 CurlyGlow Cosmetics. Todos os direitos reservados.</p>
+                <div class="flex items-center space-x-4 text-lg text-white/70">
+                    <i class="fa-brands fa-cc-visa hover:text-white" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-white" title="Mastercard"></i>
+                    <i class="fa-solid fa-pix hover:text-brand-pinkRed" title="Pix"></i>
+                    <i class="fa-solid fa-barcode hover:text-white" title="Boleto"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data de Produtos CurlyGlow
+        const products = [
+            {
+                id: 1,
+                name: "Ativador de Cachos Definição Suprema",
+                category: "ativador",
+                curl: "3ABC",
+                price: 44.90,
+                rating: 4.9,
+                reviews: 182,
+                image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80",
+                badge: "Mais Vendido",
+                description: "Definição espetacular e toque aveludado. Com óleo de argan e manteiga de cacau para retenção sem peso."
+            },
+            {
+                id: 2,
+                name: "Gelatina Modeladora Efeito Espelhado",
+                category: "gelatina",
+                curl: "2ABC",
+                price: 36.90,
+                rating: 4.8,
+                reviews: 114,
+                image: "https://images.unsplash.com/photo-1523824921871-d6f1a15151f1?auto=format&fit=crop&w=600&q=80",
+                badge: "Zero Frizz",
+                description: "Fixação flexível sem esfarelar. Ideal para ondas e cachos abertos que necessitam de brilho e leveza."
+            },
+            {
+                id: 3,
+                name: "Máscara de Nutrição Intensiva Karité",
+                category: "tratamento",
+                curl: "4ABC",
+                price: 59.90,
+                rating: 5.0,
+                reviews: 245,
+                image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80",
+                badge: "Poder Crespo",
+                description: "Manteiga de Karité concentrada + Óleo de Coco para nutrição profunda de fios crespos e ressecados."
+            },
+            {
+                id: 4,
+                name: "Sérum Reparador de Pontas Nutritivo",
+                category: "oleos",
+                curl: "all",
+                price: 31.90,
+                rating: 4.9,
+                reviews: 98,
+                image: "https://images.unsplash.com/photo-1584297091622-af8e5fda91c2?auto=format&fit=crop&w=600&q=80",
+                badge: "Toque Aveludado",
+                description: "Sela as pontas duplas instantaneamente e concede brilho e maciez ao finalizar qualquer penteado."
+            },
+            {
+                id: 5,
+                name: "Creme de Pentear Transição & Força",
+                category: "ativador",
+                curl: "transicao",
+                price: 41.90,
+                rating: 4.7,
+                reviews: 87,
+                image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80",
+                badge: "Transição Capilar",
+                description: "Ajuda no alinhamento de duas texturas. Rico em queratina vegetal e biotina para alinhamento dos fios."
+            },
+            {
+                id: 6,
+                name: "Gel Memorizador de Cachos 72h",
+                category: "gelatina",
+                curl: "3ABC",
+                price: 38.50,
+                rating: 4.8,
+                reviews: 160,
+                image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80",
+                badge: "Alta Definição",
+                description: "Memorizador de curvatura de longa duração. Garante excelente day after sem necessidade de lavar diariamente."
+            },
+            {
+                id: 7,
+                name: "Shampoo Hidratante Sem Sulfato",
+                category: "tratamento",
+                curl: "all",
+                price: 34.00,
+                rating: 4.7,
+                reviews: 92,
+                image: "https://images.unsplash.com/photo-1522337094846-8a83858c44c5?auto=format&fit=crop&w=600&q=80",
+                badge: "Sem Sulfato",
+                description: "Limpeza delicada que preserva a hidratação natural sem ressecar o comprimento e pontas."
+            },
+            {
+                id: 8,
+                name: "Spray Day After Reativador de Cachos",
+                category: "oleos",
+                curl: "all",
+                price: 28.90,
+                rating: 4.9,
+                reviews: 215,
+                image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80",
+                badge: "Praticidade",
+                description: "Basta borrifar no dia seguinte para reativar o formato dos cachos e remover o frizz em segundos."
+            }
+        ];
+
+        let cart = [];
+        let currentCurlFilter = 'all';
+        let currentCategoryFilter = 'all';
+
+        window.onload = function() {
+            renderProducts(products);
+        };
+
+        // Renderizar produtos
+        function renderProducts(productList) {
+            const grid = document.getElementById('productsGrid');
+            const noProductsMsg = document.getElementById('noProductsMessage');
+            grid.innerHTML = '';
+
+            if (productList.length === 0) {
+                noProductsMsg.classList.remove('hidden');
+                return;
+            } else {
+                noProductsMsg.classList.add('hidden');
+            }
+
+            productList.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "clean-card clean-card-hover rounded-2xl p-4 flex flex-col justify-between group";
+                
+                card.innerHTML = `
+                    <div>
+                        <div class="relative overflow-hidden rounded-xl bg-brand-pinkRedSoft mb-4 h-52 flex items-center justify-center">
+                            <span class="absolute top-2.5 left-2.5 z-10 bg-brand-pinkRed text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full shadow-sm">
+                                ${product.badge}
+                            </span>
+                            
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500">
+                            
+                            <button onclick="addToCart(${product.id})" class="absolute bottom-3 right-3 w-9 h-9 bg-white text-brand-pinkRed hover:bg-brand-pinkRed hover:text-white rounded-full shadow-md flex items-center justify-center transition-all">
+                                <i class="fa-solid fa-plus text-sm"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between text-xs text-brand-subtleText">
+                                <span class="uppercase font-bold tracking-wide text-brand-pinkRed">${product.curl === 'all' ? 'Todas Curvas' : 'Curva ' + product.curl}</span>
+                                <span class="flex items-center gap-1 font-bold text-brand-dark">
+                                    <i class="fa-solid fa-star text-[10px] text-brand-pinkRed"></i> ${product.rating} (${product.reviews})
+                                </span>
+                            </div>
+
+                            <h3 class="font-bold text-brand-dark text-sm line-clamp-2 hover:text-brand-pinkRed transition-colors cursor-pointer" onclick="addToCart(${product.id})">
+                                ${product.name}
+                            </h3>
+
+                            <p class="text-xs text-brand-subtleText line-clamp-2 leading-relaxed">
+                                ${product.description}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 mt-3 border-t border-brand-borderColor flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-brand-subtleText block -mb-0.5">Por apenas</span>
+                            <span class="text-lg font-extrabold text-brand-pinkRed">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                        </div>
+                        <button onclick="addToCart(${product.id})" class="px-4 py-2 bg-brand-pinkRed hover:bg-brand-pinkRedDark text-white text-xs font-bold rounded-lg shadow transition-all">
+                            Comprar
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtro de Busca
+        function filterProducts() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase() || 
+                              document.getElementById('searchInputMobile').value.toLowerCase();
+
+            let filtered = products.filter(p => {
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.description.toLowerCase().includes(searchVal);
+                const matchCurl = currentCurlFilter === 'all' || p.curl === currentCurlFilter || p.curl === 'all';
+                const matchCat = currentCategoryFilter === 'all' || p.category === currentCategoryFilter;
+                return matchSearch && matchCurl && matchCat;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function filterByCurl(curlType) {
+            currentCurlFilter = curlType;
+            
+            document.querySelectorAll('#curlTypeFilters button').forEach(btn => {
+                btn.classList.remove('bg-brand-pinkRed', 'text-white');
+                btn.classList.add('bg-brand-pinkRedSoft', 'text-brand-dark');
+            });
+            event.target.classList.remove('bg-brand-pinkRedSoft', 'text-brand-dark');
+            event.target.classList.add('bg-brand-pinkRed', 'text-white');
+
+            filterProducts();
+        }
+
+        function filterByCategory(cat) {
+            currentCategoryFilter = cat;
+
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-dark', 'text-white');
+                btn.classList.add('bg-white', 'text-brand-subtleText');
+            });
+            event.target.classList.remove('bg-white', 'text-brand-subtleText');
+            event.target.classList.add('bg-brand-dark', 'text-white');
+
+            filterProducts();
+        }
+
+        function resetFilters() {
+            currentCurlFilter = 'all';
+            currentCategoryFilter = 'all';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInputMobile').value = '';
+            filterProducts();
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingIndex = cart.findIndex(item => item.id === productId);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`"${product.name}" adicionado ao carrinho!`);
+        }
+
+        function updateCartQty(productId, delta) {
+            const index = cart.findIndex(item => item.id === productId);
+            if (index > -1) {
+                cart[index].qty += delta;
+                if (cart[index].qty <= 0) {
+                    cart.splice(index, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsList = document.getElementById('cartItemsList');
+            const cartCountBadge = document.getElementById('cartCountBadge');
+            const cartSubtotal = document.getElementById('cartSubtotal');
+            const cartTotal = document.getElementById('cartTotal');
+            const shippingBarProgress = document.getElementById('shippingBarProgress');
+            const shippingText = document.getElementById('shippingText');
+
+            cartItemsList.innerHTML = '';
+
+            let totalItems = 0;
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `
+                    <div class="text-center py-12 text-brand-subtleText space-y-2">
+                        <i class="fa-solid fa-bag-shopping text-3xl text-brand-pinkRed/50"></i>
+                        <p class="text-xs">Seu carrinho está vazio.</p>
+                        <a href="#produtos" onclick="toggleCart()" class="text-xs font-bold text-brand-pinkRed hover:underline inline-block">Ver produtos</a>
+                    </div>
+                `;
+            } else {
+                cart.forEach(item => {
+                    totalItems += item.qty;
+                    subtotal += item.price * item.qty;
+
+                    const itemEl = document.createElement('div');
+                    itemEl.className = "flex items-center gap-3 p-3 bg-brand-pinkRedSoft/50 rounded-xl border border-brand-borderColor";
+                    itemEl.innerHTML = `
+                        <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xs text-brand-dark line-clamp-1">${item.name}</h4>
+                            <span class="text-xs font-extrabold text-brand-pinkRed">R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                <button onclick="updateCartQty(${item.id}, -1)" class="w-5 h-5 rounded bg-white hover:bg-brand-pinkRedSoft text-xs font-bold border border-brand-borderColor">-</button>
+                                <span class="text-xs font-semibold">${item.qty}</span>
+                                <button onclick="updateCartQty(${item.id}, 1)" class="w-5 h-5 rounded bg-white hover:bg-brand-pinkRedSoft text-xs font-bold border border-brand-borderColor">+</button>
+                            </div>
+                        </div>
+                        <button onclick="updateCartQty(${item.id}, -${item.qty})" class="text-brand-subtleText hover:text-brand-pinkRed p-1">
+                            <i class="fa-regular fa-trash-can text-xs"></i>
+                        </button>
+                    `;
+                    cartItemsList.appendChild(itemEl);
+                });
+            }
+
+            cartCountBadge.innerText = totalItems;
+            cartSubtotal.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            
+            const freeShippingThreshold = 120;
+            if (subtotal >= freeShippingThreshold) {
+                shippingBarProgress.style.width = '100%';
+                shippingText.innerText = 'Parabéns! Você ganhou FRETE GRÁTIS!';
+                document.getElementById('cartShippingCost').innerText = 'GRÁTIS';
+                cartTotal.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            } else {
+                const diff = freeShippingThreshold - subtotal;
+                const percentage = Math.min((subtotal / freeShippingThreshold) * 100, 100);
+                shippingBarProgress.style.width = `${percentage}%`;
+                shippingText.innerText = `Faltam R$ ${diff.toFixed(2).replace('.', ',')} para Frete Grátis`;
+                document.getElementById('cartShippingCost').innerText = subtotal > 0 ? 'R$ 15,00' : 'R$ 0,00';
+                const finalTotal = subtotal > 0 ? subtotal + 15 : 0;
+                cartTotal.innerText = `R$ ${finalTotal.toFixed(2).replace('.', ',')}`;
+            }
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            const content = document.getElementById('cartContent');
+
+            if (drawer.classList.contains('pointer-events-none')) {
+                drawer.classList.remove('pointer-events-none', 'opacity-0');
+                content.classList.remove('translate-x-full');
+            } else {
+                content.classList.add('translate-x-full');
+                drawer.classList.add('opacity-0');
+                setTimeout(() => {
+                    drawer.classList.add('pointer-events-none');
+                }, 300);
+            }
+        }
+
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        let quizAnswers = {};
+
+        function selectQuizStep(step, val) {
+            quizAnswers[`step${step}`] = val;
+            document.getElementById(`quizStep${step}`).classList.add('hidden');
+            document.getElementById(`quizStep${step + 1}`).classList.remove('hidden');
+        }
+
+        function finishQuiz(val) {
+            quizAnswers['step3'] = val;
+            document.getElementById('quizStep3').classList.add('hidden');
+            
+            const resultBox = document.getElementById('quizResult');
+            const recText = document.getElementById('quizRecommendationText');
+            
+            resultBox.classList.remove('hidden');
+
+            let curlLabel = quizAnswers.step1 === '2ABC' ? 'Ondulados' : quizAnswers.step1 === '3ABC' ? 'Cacheados' : 'Crespos';
+            recText.innerHTML = `Para fios <strong>${curlLabel}</strong> com foco em <strong>${quizAnswers.step2}</strong>, sugerimos o <strong>Kit Definição & Nutrição</strong> (Ativador + Gelatina + Sérum Reparador).`;
+        }
+
+        function addRecommendedComboToCart() {
+            addToCart(1);
+            addToCart(2);
+            addToCart(4);
+            toggleCart();
+        }
+
+        function restartQuiz() {
+            quizAnswers = {};
+            document.getElementById('quizResult').classList.add('hidden');
+            document.getElementById('quizStep1').classList.remove('hidden');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = msg;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            toggleModal('loginModal');
+            showToast("Login efetuado com sucesso! Bem-vinda à CurlyGlow.");
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast("Cupom CURLY10 ativado! Confira seu e-mail.");
+            e.target.reset();
+        }
+
+        function checkoutSimulated() {
+            if (cart.length === 0) {
+                showToast("Seu carrinho está vazio!");
+                return;
+            }
+            showToast("Pedido concluído com sucesso! Obrigado por comprar na CurlyGlow.");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        function toggleAccordion(id) {
+            const body = document.getElementById(`accBody${id}`);
+            const icon = document.getElementById(`accIcon${id}`);
+            body.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>
